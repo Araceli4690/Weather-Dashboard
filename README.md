@@ -12,3 +12,9 @@ The weather dashboard application allows users to search for the weather outlook
 * open weather api
 
 ![](./assets/images/Weather-dashboard.gif)
+
+## Github URL
+https://github.com/Araceli4690/Weather-Dashboard.git
+
+## Website URL
+https://araceli4690.github.io/Weather-Dashboard/
