@@ -1,3 +1,4 @@
+//defining variables
 var cities = [];
 
 var cityFormEl=document.querySelector("#city-search-form");
@@ -8,6 +9,7 @@ var forecastTitle = document.querySelector("#forecast");
 var forecastContainerEl = document.querySelector("#fiveday-container");
 var pastSearchButtonEl = document.querySelector("#past-search-buttons");
 
+//getting search input 
 var formSumbitHandler = function(event){
     event.preventDefault();
     var city = cityInputEl.value.trim();
@@ -16,17 +18,17 @@ var formSumbitHandler = function(event){
         get5Day(city);
         cities.unshift({city});
         cityInputEl.value = "";
-    } else{
-        alert("Please enter a City");
-    }
+    } 
     saveSearch();
     pastSearch(city);
 }
 
+//saving search to local storage
 var saveSearch = function(){
     localStorage.setItem("cities", JSON.stringify(cities));
 };
 
+//fetching city weather from weather api
 var getCityWeather = function(city){
     var apiKey = "844421298d794574c100e3409cee0499"
     var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
@@ -38,13 +40,11 @@ var getCityWeather = function(city){
         });
     });
 };
-
+//display weather
 var displayWeather = function(weather, searchCity){
    //clear old content
    weatherContainerEl.textContent= "";  
    citySearchInputEl.textContent=searchCity;
-
-   //console.log(weather);
 
    //create date element
    var currentDate = document.createElement("span")
@@ -85,6 +85,7 @@ var displayWeather = function(weather, searchCity){
    getUvIndex(lat,lon)
 }
 
+//fetching uv index from api
 var getUvIndex = function(lat,lon){
     var apiKey = "844421298d794574c100e3409cee0499"
     var apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`
@@ -92,11 +93,8 @@ var getUvIndex = function(lat,lon){
     .then(function(response){
         response.json().then(function(data){
             displayUvIndex(data)
-           // console.log(data)
         });
     });
-    //console.log(lat);
-    //console.log(lon);
 }
  
 var displayUvIndex = function(index){

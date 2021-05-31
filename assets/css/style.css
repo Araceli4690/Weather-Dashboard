@@ -2,7 +2,9 @@
     background-color: rgb(167, 248, 241);
     color: black;
 }
-
+.day-container {
+    display: flex;
+}
 
 .btn {
     margin-top: 10px;
@@ -34,3 +36,9 @@ span.favorable{
     color:white;
 }
 
+@media (max-width: 767.98px) {
+    .day-container {
+        display:inline-block;
+        flex: 1;
+    }
+}
