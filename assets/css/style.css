@@ -1,6 +1,6 @@
 .heading {
-    background-color: rgb(167, 248, 241);
-    color: black;
+    background-color: #0a3f89;
+    color: white;
 }
 .day-container {
     display: flex;
@@ -19,6 +19,14 @@
     flex:auto
 }
 
+.container-fluid{
+    background-image: linear-gradient(to bottom right,  #cdcdcd, #aa6eb6, #ffffff);
+    padding: 20px;
+}
+#current-forecast{
+    background-color: rgb(48, 3, 113);
+    padding: 25px;
+}
 span.severe{
     padding: 3px;
     background-color: red;
