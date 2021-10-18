@@ -27,6 +27,9 @@
     background-color: rgb(48, 3, 113);
     padding: 25px;
 }
+body{
+    font-family: 'Playfair Display', serif;
+};
 span.severe{
     padding: 3px;
     background-color: red;
